@@ -1,4 +1,4 @@
-#Mosses's project--- Thank you for visiting 😊 feel free to contact: mosasross@gmail.com
+# Mosses's project--- Thank you for visiting 😊 feel free to contact: mosasross@gmail.com
 
 import cv2
 import mediapipe as mp
@@ -36,7 +36,6 @@ def change_vol():
 
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
-                    # Thumb and index finger
                     mp_drawing.draw_landmarks(
                         frame,
                         hand_landmarks,
@@ -68,8 +67,7 @@ def change_vol():
                     if new_volume != current_volume:
                         volume.SetMasterVolumeLevelScalar(new_volume, None)
                         current_volume = new_volume
-
-                    #Visuals
+                        
                     volume_bar_height = int((1.0 - current_volume) * frame.shape[0])
                     cv2.rectangle(frame, (0, 0), (20, frame.shape[0]), (0, 0, 255), -1)
                     cv2.rectangle(frame, (0, volume_bar_height), (20, frame.shape[0]), (0, 255, 0), -1)
