@@ -1,2 +1,2 @@
 # HandTrakingPakage
-It's created with the mediapipe package to detect hand in real-time 
+It's created with the mediapipe package to detect hands in real-time 
