@@ -9,19 +9,14 @@ def track_hands():
     
     with mp_hands.Hands(
         static_image_mode=False,
-        max_num_hands=2,
+        max_num_hands=3,
         min_detection_confidence=0.5) as hands:
         
         while cap.isOpened():
             ret, frame = cap.read()
             frame = cv2.flip(frame, 1)
-            
 
-            frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            
-            
-            results = hands.process(frame_rgb)
-            
+            results = hands.process(frame)
             
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
@@ -29,16 +24,13 @@ def track_hands():
                         frame,
                         hand_landmarks,
                         mp_hands.HAND_CONNECTIONS)
-            
-            
-            cv2.imshow('Hand Tracking', frame)
-            
+            cv2.imshow('Real-Time Hand Detection', frame)
             
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
     
-    
     cap.release()
     cv2.destroyAllWindows()
+
 
 track_hands()
