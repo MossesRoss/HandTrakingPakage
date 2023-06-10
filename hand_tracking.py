@@ -31,6 +31,6 @@ def track_hands():
     
     cap.release()
     cv2.destroyAllWindows()
-
-
+    
+    
 track_hands()
