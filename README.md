@@ -1,4 +1,5 @@
 # HandTrakingPakage
+You can find a lot of hand tracking pakages here...
 It's created with the mediapipe package to detect hands in real-time 
 
 Contributing
